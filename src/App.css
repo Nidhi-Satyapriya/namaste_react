@@ -1,39 +1,52 @@
-.App {
-  text-align: center;
-  color: aqua;
+.header {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center the items */
+  justify-content: space-between; /* Space between logo and nav items */
+  padding: 0 20px; /* Add some padding on the sides */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add subtle shadow for depth */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo img {
+  height: 60px; /* Set logo size */
+  width: auto; /* Maintain aspect ratio */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-items ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Layout nav items in a row */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-items li {
+  margin-left: 20px; /* Space between nav items */
+}
+
+.nav-items li:first-child {
+  margin-left: 0; /* No margin for the first item */
+}
+
+.nav-items a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color */
+  font-weight: bold; /* Make text bold */
+}
+/* ResCard.css or App.css */
+.res-card {
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center the text inside each ResCard */
+}
+
+/* Optional: Style the Container div for overall layout */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjust as needed */
+  padding: 20px;
 }
