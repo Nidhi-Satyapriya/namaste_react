@@ -1851,8 +1851,14 @@ function Body()
 <div className='Body'>
   <div className='Search'>
     <div className='Container'>
-    
-      <ResCard  resData={resObj[0]}/>
+    {
+      resObj.map((res)=>
+      {
+       return( <ResCard key={res.data.id} resData={res.data}/>)
+      }
+      )
+    }
+     
       
     </div>
   </div>
@@ -1876,25 +1882,34 @@ const Header=()=>
  )
 } 
 
-const ResCard = (props) => {
-  const {resData}=props;
+const ResCard = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  area,
+  lastMileTravelString,
+  costForTwoString,
+  avgRating,
+}) => {
   return (
-    <div className="res-card">
-       <img
-    src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${resData.data.cloudinaryImageId}`}
-    alt="Description"
-  />
-      <h3>{resData.data.name}</h3>
-      <p>{resData.data.cuisines}</p>
-      <h4>{resData.data.deliveryTime}</h4>
+    <div className="card">
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          cloudinaryImageId
+        }
+      />
+      <h2>{name}</h2>
+      <h4>{cuisines}</h4>
+      <h4>{area}</h4>
       <span>
-      <h4><i class="fa-solid fa-star"></i>{resData.data.avgRating}</h4>
-        <h4>{resData.data.lastMileTravelString}</h4>
-        <h4>{resData.data.costForTwoString}</h4>
+      <h4><i class="fa-solid fa-star"></i>{avgRating}</h4>
+        <h4>{lastMileTravelString}</h4>
+        <h4>{costForTwoString}</h4>
       </span>
     </div>
   );
-}
+};
 
 
 
